@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
+<style>
+
+.robot {
+  position: relative;
+  left: 290px;
+
+}
+
+
+.beep {
+  width: 12px;
+  height: 0px;
+  border: 5px solid transparent;
+  border-top: 10px solid #FFDAB9;
+  border-bottom: 100px solid #4B0082;
+  position: relative;
+  left: 150px;
+}
+
+@keyframes blink {
+  50% {
+    background: radial-gradient(circle, red 15%, transparent 40%),#ADFF2F;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    background: -webkit-radial-gradient(circle, red 15%, transparent 40%),#ADFF2F;
+  }
+}
+@-moz-keyframes blink {
+  50% {
+    background: -moz-radial-gradient(circle, red 15%, transparent 40%),#ADFF2F;
+  }
+}
+.laser {
+  animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
+}
+.brain {
+
+  background: radial-gradient(circle, white 15%, transparent 40%), #4B0082;
+  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #4B0082;
+  background: -webkit-radial-gradient(circle,  white 15%, transparent 40%),#4B0082;
+  background-size: 95px 150px;
+  height: 170px;
+  width: 200px;
+  border-radius: 10px 10px 80px 80px;
+  border: 10px dotted  #FFDAB9;
+  position: relative;
+  left: 50px;
+}
+.M{
+  background: linear-gradient(rgba(255,0,0,1), rgba(255,255,255,4));
+  background: -webkit-linear-gradient(rgba(255,0,0,1), rgba(255,255,255,4));
+  background: -moz-linear-gradient(rgba(255,0,0,1), rgba(255,255,255,4));
+  width: 50px;
+  height: 20px;
+  position: relative;
+  top: 130px;
+  left: 75px;
+  border-radius: 5px 5px 30px 30px;
+}
+
+.torso {
+
+ background: linear-gradient(rgba(75,0,130,4), rgba(120,0,0,0.3));
+  background: -webkit-linear-gradient(rgba(75,0,130,4), rgba(120,0,0,0.3));
+  background: -moz-linear-gradient(rgba(75,0,130,4), rgba(120,0,0,0.3));
+
+  //background-position: center;
+  //background-size: cover;
+  height: 420px;
+  width: 270px;
+  border: 10px dotted #FFDAB9;
+  border-radius: 30px 30px 20px 20px;
+  position: relative;
+  left: 15px;
+
+}
+.left {
+
+    background-color: #4B0082;
+    width: 250px;
+   transform: rotate(-48deg);
+  -webkit-transform: rotate(-48deg);
+  -moz-transform: rotate(-48deg);
+  position: relative;
+  top: 100px;
+  left: -200px;
+  z-index: -1;
+  border-bottom: 50px dashed  #FFDAB9;
+
+}
+.right {
+
+  transform:  rotate(44deg);
+  -webkit-transform:  rotate(44deg);
+ -moz-transform: rotate(44deg);
+  position: relative;
+  top: 40px;
+  left: 220px;
+  z-index: -1;
+  border-bottom: 50px dashed  #FFDAB9;
+   background-color: #4B0082;
+    width: 250px;
+}
+
+
+.crcl1{
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  border: 2px solid  white;
+  background: linear-gradient(rgba(255,0,0,1), rgba(0,0,0,4));
+  background: -webkit-linear-gradient(rgba(255,0,0,1), rgba(0,0,0,4));
+  background: -moz-linear-gradient(rgba(255,0,0,1), rgba(0,0,0,4));
+  position: relative;
+  top: 178px;
+  left: 45px;
+
+}
+.crcl2{
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  border: 2px solid  white;
+  background: linear-gradient(rgba( 255,0,0,1), rgba(0,0,0,4));
+  background: -webkit-linear-gradient(rgba( 255,0,0,1), rgba(0,0,0,4));
+  background: -moz-linear-gradient(rgba( 255,0,0,1), rgba(0,0,0,4));
+
+  position: relative;
+  top: 140px;
+  left: 180px;
+}
+.crcl3{
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  border: 2px solid  white;
+  background: linear-gradient(rgba( 129,129,247,1), rgba(0,0,0,4));
+  background: -webkit-linear-gradient(rgba( 129,129,247,1), rgba(0,0,0,4));
+  background: -moz-linear-gradient(rgba( 129,129,247,1), rgba(0,0,0,4));
+
+  position: relative;
+  top: 100px;
+  left: 115px;
+}
+.rect{
+  background: ;
+  width: 200px;
+  height: 80px;
+  position: relative;
+  left: 27px;
+  top: 41px;
+  border: 5px dotted;
+  border-radius: 50px;
+
+}
+.leg1{
+  position: relative;
+  left: 50px;
+  height: 80px;
+  border-left: 10px solid peachpuff;
+  border-right: 10px solid peachpuff;
+  width: 30px;
+  border-bottom: 30px double peachpuff;
+  background: linear-gradient( bottom right, #4B0082, rgba(0,0,0,0));
+  background: -webkit-linear-gradient( bottom right, #4B0082, rgba(0,0,0,0));
+  background: -moz-linear-gradient( bottom right, #4B0082, rgba(0,0,0,0));
+
+}
+.leg2{
+height: 80px;
+border-left: 10px solid peachpuff;
+border-right: 10px solid peachpuff;
+border-bottom: 30px double peachpuff;
+width: 30px;
+position: relative;
+left: 210px;
+top: -110px;
+background: linear-gradient( bottom right, #4B0082, rgba(0,0,0,0));
+background: -webkit-linear-gradient( bottom right, #4B0082, rgba(0,0,0,0));
+background: -moz-linear-gradient( bottom right, #4B0082, rgba(0,0,0,0));
+//background: #404040;
+}
+
+.foot1 {
+  height: 40px;
+  width: 70px;
+  background: #4B0082;
+
+  border-radius: 40px 40px 0 0 ;
+  border: 15px solid peachpuff;
+  position: relative;
+  left: 25px;
+  top: -125px;
+  z-index: -1;
+}
+.foot2 {
+  height: 40px;
+  width: 70px;
+  background: #4B0082;
+
+  border-radius: 40px 40px 0 0 ;
+  border: 15px solid peachpuff;
+  position: relative;
+  left: 185px;
+  top: -195px;
+  z-index: -1;
+}
+
+ button{
+   position: relative;
+   top: -173px;
+ padding: 10px;
+ margin: 10px ;
+ color: white;
+ font-weight: bold;
+ border-radius: 15px 0px 15px 0px;
+ border: 3px solid purple;
+ height: 45px;
+
+ }
+.moves{
+  padding: 8px 22px 8px 22px;
+}
+.color{
+padding: 8px 20px 8px 20px;
+}
+.moverobot{
+	animation: move 5s infinite;
+  -webkit-animation:move 5s infinite;
+
+}
+.flash{
+  margin-left: 30px ;
+}
+
+@keyframes move{
+
+ 50%{
+  position: relative;
+  left:800px;
+
+ }
+
+}
+@-webkit-keyframes move{
+
+ 50%{
+  position: relative;
+  left:800px;
+
+ }
+
+}
+@-moz-keyframes move{
+
+ 50%{
+  position: relative;
+  left:800px;
+
+ }
+
+}
+
+</style>
+</head>
+
+<body>
+<div class="robot">
+  <div class="beep"></div>
+  <div class="brain">
+  <div class="M"></div>
+  </div>
+  <div class="torso">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="crcl1"></div>
+    <div class="crcl2"></div>
+    <div class="crcl3"></div>
+    <div class="rect"></div>
+  </div>
+  <div class="leg1"></div>
+  <div class="leg2"></div>
+  <div class="foot1"></div>
+  <div class="foot2"></div>
+</div>
+<button class="flash">Laser Eyes on/off</button>
+<button class="color">Change Color</button>
+<button class="moves">Move Robot</button>
+
+
+
+<script>
+
+// When eyes button is clicked, toggle laser class on brain
+
+$(".flash").click(function() {
+
+ $(".brain").toggleClass('laser');
+ $(".crcl1").toggleClass('laser');
+  $(".crcl2").toggleClass('laser');
+   $(".crcl3").toggleClass('laser');
+   $(".foot1").toggleClass('laser');
+   $(".foot2").toggleClass('laser');
+
+});
+
+
+// When color button is clicked...
+
+$(".color").click(function() {
+
+ // assign each named color a random number 0-255
+  var red = Math.floor(Math.random() * 255);
+ var green = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+ var randomRGBA='rgba('+red+','+green+','+blue+',1)';
+ $("body").css("background",randomRGBA);
+
+ //Display the three values in an alert window
+ //alert(randomRGBA);
+ });
+$(".moves").click(function() {
+  		$(".robot").toggleClass('moverobot');
+		});
+$("button").hover(function(){
+    $(this).css("background-color", "purple");
+    }, function(){
+    $(this).css("background-color", "#ADFF2F");
+});
+
+</script>
+</body>
+<html>
